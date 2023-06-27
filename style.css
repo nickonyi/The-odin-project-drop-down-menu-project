@@ -12,7 +12,7 @@
 }
 
 nav {
-    background: #1a1a1a;
+    background: #080808;
     width: 100%;
     padding: 20px 10%;
     display: flex;
@@ -46,6 +46,8 @@ nav ul li a {
     width: 50px;
     border-radius: 50%;
     margin-left: 40px;
+    position: relative;
+    top: 15px;
     cursor: pointer;
 }
 
@@ -123,4 +125,55 @@ nav ul li a {
 
 .sub-menu-link:hover p {
     font-weight: 600;
+}
+
+.check-btn {
+    font-size: 2.5rem;
+    color: white;
+    display: flex;
+    justify-self: end;
+    display: none;
+}
+
+#check {
+    display: none;
+}
+
+@media (max-width:850px) {
+    .check-btn {
+        display: block;
+    }
+    ul {
+        position: fixed;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        padding: 40px;
+        left: 0;
+        background: #2c3e50;
+        border: 1px solid green;
+        inset: 0 0 0 30%;
+        top: 87px;
+        transition: all .5s;
+    }
+    .user-pick {
+        margin-left: 10px;
+    }
+    .sub-menu-wrap {
+        position: absolute;
+        top: 450px;
+        right: 30px;
+        width: 250px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 1s;
+        z-index: 1;
+    }
+    #check {
+        display: none;
+    }
+    #check:checked~ul {
+        left: -100%;
+    }
 }
